@@ -2,11 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 const Cards = () => {
   const [card, setCard] = useState([]);
   const getCardDetails = async () => {
-    const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
-      headers: {
-        Accept: "application/json",
-      },
-    });
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
     const data = await response.json();
     setCard(data);
   };
@@ -16,7 +12,7 @@ const Cards = () => {
 
   return (
     <div className="card-details grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
-      {card.slice(0,20).map((card) => {
+      {card.slice(0, 20).map((card) => {
         return (
           <div
             key={card.id}
