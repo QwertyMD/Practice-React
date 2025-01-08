@@ -1,27 +1,26 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
-import { Plus, Layout } from "lucide-react";
+import { Layout, Plus } from "lucide-react";
+import { Button } from "./ui/button";
 
-const CreateNew = ({ setisHome }) => {
+const CreateNew = ({ setIsHome }) => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-indigo-50 to-purple-50 flex flex-col items-center justify-center p-4">
-      <div className="text-center space-y-8 max-w-md mx-auto">
-        <div className="rounded-full bg-white/80 p-6 w-24 h-24 mx-auto flex items-center justify-center shadow-md">
-          <Layout className="w-12 h-12 text-indigo-400" />
+    <div className="min-h-screen flex justify-center items-center bg-blue-100">
+      <div className="flex flex-col items-center gap-7 text-center">
+        <div className="bg-white h-24 w-24 rounded-full shadow-lg flex justify-center items-center">
+          <Layout className="h-14 w-14 text-indigo-400" />
         </div>
-
         <div className="space-y-3">
-          <h2 className="text-2xl font-semibold text-gray-800">No cards yet</h2>
-          <p className="text-gray-500">Create your first card to get started</p>
+          <div className="font-semibold text-2xl">No cards yet</div>
+          <div className="text-gray-500">
+            Create your first card to get started
+          </div>
         </div>
         <Button
-          variant="default"
-          size="lg"
-          className="flex items-center gap-2 mx-auto shadow-lg hover:shadow-xl transition-all bg-indigo-600 hover:bg-indigo-700 hover:scale-105"
-          onClick={() => setisHome(false)}
+          onClick={() => setIsHome(false)}
+          className="p-5 transition-all hover:scale-105 shadow-lg bg-indigo-700 hover:bg-indigo-800"
         >
-          <Plus className="w-5 h-5" />
-          Add marriage card
+          <Plus className="w-10 h-10" />
+          Create a new card
         </Button>
       </div>
     </div>

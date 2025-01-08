@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import CreateNew from "./components/CreateNew";
 import CreateCard from "./components/CreateCard";
 
-function App() {
-  const [isHome, setisHome] = useState(true);
+const App = () => {
+  const [isHome, setIsHome] = useState(true);
 
   return (
     <>
       {isHome ? (
-        <CreateNew setisHome={setisHome} />
+        <CreateNew setIsHome={setIsHome} />
       ) : (
-        <CreateCard setisHome={setisHome} />
+        <CreateCard setIsHome={setIsHome} />
       )}
     </>
   );
-}
+};
 
 export default App;
