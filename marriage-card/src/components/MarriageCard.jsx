@@ -1,8 +1,9 @@
-import { Heart } from "lucide-react";
+import { Heart, Plus } from "lucide-react";
 import React from "react";
 import { Card, CardContent } from "./ui/card";
+import { Button } from "./ui/button";
 
-const MarriageCard = () => {
+const MarriageCard = ({ setIsHome }) => {
   return (
     <div className="flex flex-col items-center gap-7 text-center">
       <Card className="shadow-lg max-w-xs md:max-w-2xl">
@@ -39,6 +40,13 @@ const MarriageCard = () => {
           </div>
         </CardContent>
       </Card>
+      <Button
+        onClick={() => setIsHome(true)}
+        className="p-5 transition-all hover:scale-105 shadow-lg bg-pink-600 hover:bg-pink-700"
+      >
+        <Plus className="w-10 h-10" />
+        Create a new card
+      </Button>
     </div>
   );
 };

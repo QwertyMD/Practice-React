@@ -20,12 +20,12 @@ const CreateCard = ({ setIsHome }) => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-12">
-      <div className="flex gap-9">
+    <div className="flex flex-col items-center gap-7 sm:gap-12 my-3">
+      <div className="flex flex-col sm:flex-row gap-5 sm:gap-9">
         {["Bride", "Bridegroom"].map((person) => (
-          <Card key={person} className="shadow-lg">
-            <CardContent className="p-5 space-y-9">
-              <div className="w-full h-48 rounded-lg border-2 flex justify-center items-center relative">
+          <Card key={person} className="shadow-lg min-w-64">
+            <CardContent className="p-5 space-y-5">
+              <div className="w-full h-60 rounded-lg border-2 flex justify-center items-center relative">
                 {images[person] && (
                   <img
                     src={images[person]}
@@ -50,7 +50,7 @@ const CreateCard = ({ setIsHome }) => {
         ))}
       </div>
       <Button
-        onClick={() => setIsHome(true)}
+        onClick={() => setIsHome(false)}
         className="p-5 transition-all hover:scale-105 shadow-lg bg-pink-600 hover:bg-pink-700"
       >
         <Heart />

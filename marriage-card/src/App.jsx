@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import CreateNew from "./components/CreateNew";
 import CreateCard from "./components/CreateCard";
 import MarriageCard from "./components/MarriageCard";
 const App = () => {
@@ -7,12 +6,11 @@ const App = () => {
 
   return (
     <div className="min-h-screen flex justify-center items-center bg-blue-100">
-      {/* {isHome ? (
-        <CreateNew setIsHome={setIsHome} />
-      ) : (
+      {isHome ? (
         <CreateCard setIsHome={setIsHome} />
-      )} */}
-      <MarriageCard />
+      ) : (
+        <MarriageCard setIsHome={setIsHome} />
+      )}
     </div>
   );
 };
