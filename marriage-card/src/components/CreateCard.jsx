@@ -5,8 +5,15 @@ import { Card, CardContent } from "./ui/card";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 
-const CreateCard = ({ setIsHome }) => {
+const CreateCard = ({
+  setIsHome,
+  setBrideName,
+  setBridegroomName,
+  setBrideImage,
+  setBridegroomImage,
+}) => {
   const [images, setImages] = useState({ Bride: null, Bridegroom: null });
+  const [names, setNames] = useState({ Bride: null, Bridegroom: null });
 
   const handleImageChange = (e, person) => {
     const file = e.target.files[0];
@@ -17,6 +24,19 @@ const CreateCard = ({ setIsHome }) => {
       };
       reader.readAsDataURL(file);
     }
+  };
+
+  const handleNameChange = (e, person) => {
+    const { value } = e.target;
+    setNames((prevNames) => ({ ...prevNames, [person]: value }));
+  };
+
+  const handleCreateMarriage = () => {
+    setBrideName(names.Bride);
+    setBridegroomName(names.Bridegroom);
+    setBrideImage(images.Bride);
+    setBridegroomImage(images.Bridegroom);
+    setIsHome(false);
   };
 
   return (
@@ -43,14 +63,17 @@ const CreateCard = ({ setIsHome }) => {
               </div>
               <div className="">
                 <Label>Name of {person}:</Label>
-                <Input />
+                <Input
+                  value={names[person] || ""}
+                  onChange={(e) => handleNameChange(e, person)}
+                />
               </div>
             </CardContent>
           </Card>
         ))}
       </div>
       <Button
-        onClick={() => setIsHome(false)}
+        onClick={handleCreateMarriage}
         className="p-5 transition-all hover:scale-105 shadow-lg bg-pink-600 hover:bg-pink-700"
       >
         <Heart />
