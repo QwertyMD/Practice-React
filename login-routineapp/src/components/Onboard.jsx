@@ -30,7 +30,7 @@ const Onboard = ({ setIsLogin }) => {
             onClick={() => setIsLogin(true)}
             className="px-10 py-5 bg-[#f84178] hover:bg-[#f84178] shadow-[0_2px_5px_#f84178] active:scale-90 rounded-full transition"
           >
-            Login
+            Go to Login
           </Button>
         </CardFooter>
       </Card>
