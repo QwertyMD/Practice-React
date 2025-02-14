@@ -16,12 +16,12 @@ const Login = () => {
   return (
     <div>
       <div className="min-h-screen bg-gradient-to-br from-pink-200 via-white to-blue-200 flex justify-center items-center">
-        <Card className="max-w-4xl flex flex-col items-center text-center m-5 p-3">
+        <Card className="max-w-4xl flex flex-col items-center text-center m-3 p-3">
           <CardHeader>
             <CardTitle className="text-xl">Login</CardTitle>
             <CardDescription>Please Login to continue</CardDescription>
           </CardHeader>
-          <CardContent className="text-left mt-5">
+          <CardContent className="text-left mt-5 w-96">
             <Label htmlFor="email" className="">
               Enter email
             </Label>
@@ -40,7 +40,7 @@ const Login = () => {
           </Button>
           <div className="flex items-center justify-evenly text-gray-400 w-full my-5">
             <div className="flex-shrink-0 h-0.5 w-1/3 bg-gray-300"></div>
-            <p className="w-full">OR</p>
+            <p>OR</p>
             <div className="flex-shrink-0 h-0.5 w-1/3 bg-gray-300"></div>
           </div>
           <CardFooter>
