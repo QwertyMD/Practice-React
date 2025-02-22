@@ -1,18 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <div className="bg-blue-200 px-4 py-2">
       <ul className="flex gap-5 justify-center">
-        <Link to="/">
+        <NavLink to="/" className={(e) => e.isActive && "text-red-500"}>
           <li className="cursor-pointer">Home</li>
-        </Link>
-        <Link to="/about">
+        </NavLink>
+        <NavLink to="/about" className={(e) => e.isActive && "text-red-500"}>
           <li className="cursor-pointer">About</li>
-        </Link>
-        <Link to="/contact">
+        </NavLink>
+        <NavLink to="/contact" className={(e) => e.isActive && "text-red-500"}>
           <li className="cursor-pointer">Contact</li>
-        </Link>
+        </NavLink>
       </ul>
     </div>
   );
